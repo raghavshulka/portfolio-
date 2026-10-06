@@ -1,0 +1,19 @@
+{
+  "short_name": "Himanshu",
+  "name": "Himanshu Shukla",
+  "description": "Portfolio of Himanshu Shukla, AI-focused full stack developer.",
+  "icons": [
+    {
+      "src": "/icons/monogram.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "display": "standalone",
+  "scope": "/",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}
