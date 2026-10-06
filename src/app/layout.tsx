@@ -107,7 +107,8 @@ function getRootJsonLd() {
 // for the initial render. next-themes handles the `class` attribute swap.
 const themeColorBootstrap = String.raw`
   try {
-    var isDark = localStorage.theme !== 'light';
+    var t = localStorage.theme;
+    var isDark = t === 'dark' || (t !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (isDark) {
       var meta = document.querySelector('meta[name=\"theme-color\"]');
       if (meta) meta.setAttribute('content', '${META_THEME_COLORS.dark}');

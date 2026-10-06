@@ -75,24 +75,6 @@ const nextConfig: NextConfig = {
 
     return [
       {
-        source: "/bannerfield.webp",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        source: "/:path(ascii-footer.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
         source: "/:path((?:fonts|icons|projects|logos|image)/.*)",
         headers: [
           {

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Script from "next/script"
 
+import { Rail, StripeBand } from "@/components/site-shell"
 import { SITE_INFO } from "@/config/site"
 import { PROJECTS, PROJECTS_BY_ID } from "@/features/portfolio/data/projects"
 import { USER } from "@/features/portfolio/data/user"
@@ -152,7 +153,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <ProjectDetail project={project} />
+      <StripeBand />
+      <div className="border-b border-line">
+        <Rail className="max-md:border-x-0">
+          <ProjectDetail project={project} />
+        </Rail>
+      </div>
     </>
   )
 }

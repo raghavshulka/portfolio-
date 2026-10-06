@@ -40,8 +40,10 @@ export type User = {
     website: string
     experienceId?: string
   }[]
-  /** Rich about section; supports Markdown */
-  about: string
+  /** One-line headline above the about paragraph */
+  headline: string
+  /** About paragraphs, rendered in order */
+  about: string[]
   /** Open Graph image URL for social sharing */
   ogImage: string
   /** Authoritative public profile URLs used for entity matching */

@@ -8,7 +8,7 @@ export const USER: User = {
   gender: "male",
   pronouns: "he/him",
 
-  bio: "AI-focused full stack developer. I reason from first principles, build end to end, and ship to production.",
+  bio: "Full-stack AI developer. Builds LLM agents, RAG systems and production web and mobile apps.",
 
   flipSentences: [
     "AI-focused Full Stack Developer",
@@ -25,15 +25,19 @@ export const USER: User = {
   initials: "HS",
   availability: "Available now for full-time roles and freelance or contract work",
 
-  jobTitle: "AI-focused Full Stack Developer",
-  seoTitle: "Himanshu Shukla | AI-focused Full Stack Developer",
+  jobTitle: "Full-stack AI developer",
+  seoTitle: "Himanshu Shukla | Full-stack AI Developer",
   seoDescription:
-    "Himanshu Shukla, AI-focused full stack developer. LLM orchestration, agents, RAG and MCP, plus the Next.js, Node.js and React Native products around them.",
+    "Himanshu Shukla, full-stack AI developer in Delhi, India. Builds LLM agents, RAG systems and production web and mobile apps. Open for full-time and freelance work.",
 
   // Vital AI contract ended Aug 2026; no current employer.
   jobs: [],
 
-  about: `I'm an engineer and a problem solver. I start from first principles: work out what the problem actually is and what constrains it, then build up from there instead of reaching for the usual pattern. I build end to end, across frontend, backend, data and the AI layer, and I ship to production. Most of my recent work is LLM systems: orchestration across providers, streaming, tool calling, agents, RAG and guardrails, plus the web and mobile products around them.`,
+  headline: "I build products that hold up in production.",
+  about: [
+    "I'm a full-stack developer who builds web apps, mobile apps and the backends behind them, and adds AI where it actually helps: agents, RAG, streaming chat and guardrails.",
+    "I take a product from idea to launch and keep it running, from frontend and APIs to databases and deployment. Four of my own apps are live on Google Play. Whether you're a company hiring full-time or a founder who needs something built, I'd be glad to help.",
+  ],
 
   ogImage: "/image/og.png",
   sameAs: [

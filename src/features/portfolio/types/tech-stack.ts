@@ -2,7 +2,9 @@ export type TechStack = {
   key: string
   title: string
   href?: string
-  /** Symbol id in /icons/tech-stack-v1.svg; omitted for concepts without a logo. */
-  iconId?: string
+  /** File name (no extension) in /public/icons/tech. */
+  logo?: string
+  /** Lucide icon for skills with no brand mark. */
+  icon?: React.ReactNode
   categories: string[]
 }

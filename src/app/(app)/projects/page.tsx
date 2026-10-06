@@ -1,6 +1,6 @@
 import Script from "next/script"
 
-import { SectionSeparator } from "@/components/section-separator"
+import { HomeSection } from "@/components/site-shell"
 import { SITE_INFO } from "@/config/site"
 import { PROJECTS } from "@/features/portfolio/data/projects"
 import { ProjectsPageContent } from "@/features/projects/components/projects-page-content"
@@ -64,15 +64,9 @@ export default function ProjectsPage() {
           __html: JSON.stringify(getProjectsJsonLd()).replace(/</g, "\\u003c"),
         }}
       />
-      <SectionSeparator />
-      <div className="relative z-1 -mt-px border-x border-t border-line bg-card max-md:border-x-0">
+      <HomeSection id="projects" title="Projects">
         <ProjectsPageContent projects={PROJECTS} />
-
-        {/* Butts straight against the last row's rule, with no gap - that rule
-            becomes the band's top edge and closes the box, which is what the
-            home page's sections do. A spacer here left the band floating. */}
-        <SectionSeparator sides={false} />
-      </div>
+      </HomeSection>
     </>
   )
 }

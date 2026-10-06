@@ -29,8 +29,7 @@ export async function GitHubContributions() {
   )
 
   return (
-    <Panel id="github" className="defer-offscreen">
-      <h2 className="sr-only">GitHub Contributions</h2>
+    <Panel className="m-4 overflow-hidden rounded-2xl border border-line">
 
       {startDate ? (
         <GitHubContributionGraph startDate={startDate} days={days} />

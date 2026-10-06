@@ -9,11 +9,11 @@ import { LanguagePreferenceProvider } from "@/hooks/use-language-preference"
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
-      enableSystem={false}
+      enableSystem
       disableTransitionOnChange
       enableColorScheme
       storageKey="theme"
-      defaultTheme="dark"
+      defaultTheme="system"
       attribute="class"
     >
       <TooltipProvider delayDuration={150}>

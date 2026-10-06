@@ -5,9 +5,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect } from "react"
 
-import { Icons } from "@/components/icons"
 import { Markdown } from "@/components/markdown"
-import { SectionSeparator } from "@/components/section-separator"
+import { TechLogo } from "@/components/tech-logo"
 import { Tag } from "@/components/ui/tag"
 import { Prose } from "@/components/ui/typography"
 import type { Project } from "@/features/portfolio/types/projects"
@@ -28,7 +27,7 @@ export function ProjectDetail({ project }: { project: Project }) {
   // Always position view at the exact top of the project detail (directly below navbar)
   useEffect(() => {
     const scrollToProjectTop = () => {
-      const about = document.getElementById("about")
+      const about = document.getElementById("home")
       const main = document.getElementById("main")
       const nav = document.querySelector("nav")
       const targetY = about
@@ -51,7 +50,7 @@ export function ProjectDetail({ project }: { project: Project }) {
   }
 
   return (
-    <article className="relative z-1 -mt-px border-x border-line bg-card max-md:border-x-0">
+    <article className="relative bg-card">
       {/* Sticky back nav */}
       <div className="sticky top-0 z-30 border-b border-line bg-card/95 backdrop-blur supports-backdrop-filter:bg-card/75">
         <div className="flex h-12 items-center justify-between gap-3 px-4 md:px-8">
@@ -125,13 +124,13 @@ export function ProjectDetail({ project }: { project: Project }) {
               rel="noopener noreferrer nofollow"
               className="inline-flex items-center gap-2 rounded-lg border border-line bg-card px-4 py-2 text-sm font-medium text-foreground shadow-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-foreground/30 hover:bg-accent hover:text-foreground hover:shadow-md active:translate-y-0 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
             >
-              <Icons.github className="size-4" />
+              <TechLogo name="github" className="size-4" />
               {t.projectDetail.sourceCode}
             </a>
           )}
           {project.links.repo && !isExternalUrl(project.links.repo) && (
             <span className="inline-flex items-center gap-2 rounded-lg border border-line bg-muted/40 px-4 py-2 text-sm font-medium text-muted-foreground">
-              <Icons.github className="size-4" />
+              <TechLogo name="github" className="size-4" />
               {project.links.repo}
             </span>
           )}
@@ -263,8 +262,6 @@ export function ProjectDetail({ project }: { project: Project }) {
         </Section>
       )}
 
-      {/* Section separator */}
-      <SectionSeparator />
     </article>
   )
 }

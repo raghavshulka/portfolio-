@@ -20,8 +20,8 @@ export const SITE_INFO = {
 }
 
 export const META_THEME_COLORS = {
-  light: "#ffffff",
-  dark: "#000000",
+  light: "#fafafa",
+  dark: "#0a0a0a",
 }
 
 export const MAIN_NAV: NavItem[] = [

@@ -767,7 +767,7 @@
      the gutter exactly. Full-bleed under `sm`, applied on the element. */
   --chat-panel-width: 22rem;
 
-  --background: #eaedf0;
+  --background: #fafafa;
   --foreground: #09090b;
   --primary: #09090b;
   --primary-foreground: #ffffff;
@@ -775,7 +775,7 @@
   --secondary-foreground: #09090b;
   --muted: #f4f4f5;
   --muted-foreground: #6b7280;
-  --card: #ffffff;
+  --card: #fafafa;
   --card-foreground: #09090b;
   --popover: #ffffff;
   --popover-foreground: #09090b;
@@ -784,7 +784,7 @@
   --accent-foreground: #09090b;
 
   --border: #e5e7eb;
-  --line: #e5e7eb;
+  --line: #e7e7e7;
   --input: #e5e7eb;
   --ring: #9ca3af;
 
@@ -840,7 +840,7 @@
 }
 
 .dark {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ededed;
   --primary: #ededed;
   --primary-foreground: #000000;
@@ -848,16 +848,16 @@
   --secondary-foreground: #ededed;
   --muted: #121215;
   --muted-foreground: #a1a1aa;
-  --card: #050505;
+  --card: #0a0a0a;
   --card-foreground: #ededed;
   --popover: #050505;
   --popover-foreground: #ededed;
   --accent: #121215;
-  --accent-muted: #0a0a0c;
+  --accent-muted: #111111;
   --accent-foreground: #ededed;
 
   --border: #222226;
-  --line: #222226;
+  --line: #1d1d1f;
   --input: #222226;
   --ring: #52525b;
 
@@ -865,7 +865,7 @@
   --destructive: #ef4444;
   --link: #38bdf8;
 
-  --surface: #050505;
+  --surface: #0a0a0a;
   --surface-foreground: #ededed;
 
   --code: #121215;
@@ -1152,4 +1152,54 @@
 
 @utility animate-stamp-pop {
   animation: stamp-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Full-bleed diagonal band between home sections. */
+.stripe-band {
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--line) 0,
+    var(--line) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+/* Faint dot grid used by the hero banner and the footer strip. */
+.dot-grid {
+  background-image: radial-gradient(
+    circle at center,
+    color-mix(in oklab, var(--foreground) 22%, transparent) 1px,
+    transparent 1.2px
+  );
+  background-size: 12px 12px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, transparent 100%);
+}
+
+
+/* Header Resume button: a soft ring that breathes. Uses the foreground colour
+   at low opacity, so it reads as a light glow on dark and a grey one on light. */
+@keyframes resume-breathe {
+  0%,
+  100% {
+    border-color: var(--line);
+    box-shadow:
+      0 0 0 0 color-mix(in oklab, var(--foreground) 0%, transparent),
+      0 0 0 0 color-mix(in oklab, var(--foreground) 0%, transparent);
+  }
+  50% {
+    border-color: color-mix(in oklab, var(--foreground) 35%, transparent);
+    box-shadow:
+      0 0 0 3px color-mix(in oklab, var(--foreground) 7%, transparent),
+      0 0 16px 1px color-mix(in oklab, var(--foreground) 12%, transparent);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .resume-pulse {
+    animation: resume-breathe 2.8s ease-in-out infinite;
+  }
+  .resume-pulse:hover,
+  .resume-pulse:focus-visible {
+    animation-play-state: paused;
+  }
 }

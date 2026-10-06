@@ -8,7 +8,7 @@ function Panel({ className, ...props }: React.ComponentProps<"section">) {
     <section
       data-slot="panel"
       className={cn(
-        "relative z-1 -mt-px border border-line bg-card max-md:border-x-0",
+        "relative",
         className
       )}
       {...props}

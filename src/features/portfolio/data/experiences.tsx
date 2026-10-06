@@ -11,27 +11,34 @@ import type { Experience } from "../types/experiences"
 
 export const EXPERIENCES: Experience[] = [
   {
-    // Client names are under NDA, so none are listed.
-    id: "freelance",
-    companyName: "Freelance",
+    id: "kentron",
+    companyName: "Kentron.ai",
+    companyWebsite: "https://kentron.ai",
     positions: [
       {
-        id: "freelance-1",
-        title: "Full-Stack & AI Developer",
-        employmentPeriod: {},
+        id: "kentron-1",
+        title: "Fullstack Developer",
+        employmentPeriod: {
+          start: "12.2024",
+          end: "05.2025",
+        },
         employmentType: "Remote",
-        icon: <BriefcaseBusinessIcon />,
-        description: `- Build web and mobile products and AI features for clients, end to end.
-- Client names are under NDA.`,
+        icon: <LayoutTemplateIcon />,
+        description: `- Worked across the full stack of an AI e-discovery platform, from the Next.js frontend to the Node.js APIs and data layer behind it.
+- Built backend features for the AI layer: LLM calls with streaming responses, tool calling, and guardrails that validate inputs and filter unsafe or off-topic outputs.
+- Owned the main user-facing interface in Next.js, using server-side rendering and static generation to improve Core Web Vitals and first load.
+- Built the client data layer with TanStack Query (caching, request deduplication, background refetching), cutting data loading times by 40%.
+- Built a new landing page and wrote technical documentation for the core app to speed up onboarding for new developers.`,
+        skills: ["Next.js", "React", "Node.js", "TypeScript", "LLM APIs", "Guardrails", "TanStack Query"],
         isExpanded: true,
       },
     ],
-    isCurrentEmployer: true,
   },
   {
     id: "vital-ai",
     companyName: "Vital AI",
-    companyWebsite: "https://vitalchats.ai",
+    // Company landing page (vitalchats.ai itself opens the product app).
+    companyWebsite: "https://landing.vitalchats.ai",
     positions: [
       {
         id: "vital-ai-1",
@@ -62,6 +69,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "fluxanix",
     companyName: "Fluxanix",
+    companyWebsite: "https://mvp.fluxanix.com",
     positions: [
       {
         id: "fluxanix-1",
@@ -81,28 +89,26 @@ export const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    id: "kentron",
-    companyName: "Kentron.ai",
+    // Client names are under NDA, so none are listed.
+    id: "freelance",
+    companyName: "Freelance",
     positions: [
       {
-        id: "kentron-1",
-        title: "Frontend Intern",
-        employmentPeriod: {
-          start: "12.2024",
-          end: "05.2025",
-        },
-        employmentType: "Internship · Remote",
-        icon: <LayoutTemplateIcon />,
-        description: `- Owned the main user-facing interface in Next.js, using server-side rendering and static generation to improve Core Web Vitals and first load.
-- Built the client data layer with TanStack Query: caching, request deduplication, and background refetching, which cut data loading times by 40%.
-- Built a new landing page and wrote technical documentation for the core app to speed up onboarding for new developers.`,
-        skills: ["Next.js", "React", "TanStack Query", "TypeScript"],
+        id: "freelance-1",
+        title: "Full-Stack & AI Developer",
+        employmentPeriod: {},
+        employmentType: "Remote",
+        icon: <BriefcaseBusinessIcon />,
+        description: `- Build web and mobile products and AI features for clients, end to end.
+- Client names are under NDA.`,
         isExpanded: true,
       },
     ],
+    isCurrentEmployer: true,
   },
   {
     id: "carissa",
+    // No website linked: could not confirm the company's official site.
     companyName: "Carissa International",
     positions: [
       {

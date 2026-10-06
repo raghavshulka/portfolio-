@@ -1,14 +1,16 @@
 import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 
-import { SectionSeparator } from "@/components/section-separator"
+import { ContactSection } from "@/components/contact-section"
+import { HomeSection } from "@/components/site-shell"
+import { ConnectGrid } from "@/features/portfolio/components/connect-grid"
 import { Experiences } from "@/features/portfolio/components/experiences"
-import { Projects } from "@/features/portfolio/components/projects"
 import { TechStack } from "@/features/portfolio/components/tech-stack"
+import { PROJECTS } from "@/features/portfolio/data/projects"
 import { USER } from "@/features/portfolio/data/user"
+import { ProjectGrid } from "@/features/projects/components/project-card"
 
-// Below-fold components dynamically imported with SSR enabled
-// to keep full SEO while code-splitting the initial JS payload
+// Below-fold, server-rendered, code-split.
 const GitHubContributions = dynamic(
   () =>
     import("@/features/portfolio/components/github-contributions").then(
@@ -34,20 +36,40 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <SectionSeparator />
+      <HomeSection id="about" title="About" contentClassName="px-5 py-6">
+        <p className="text-xl leading-snug font-medium tracking-tight text-foreground sm:text-2xl">
+          {USER.headline}
+        </p>
+        <div className="mt-3 max-w-[62ch] space-y-3 text-[15px] leading-7 text-muted-foreground sm:text-base">
+          {USER.about.map((paragraph) => (
+            <p key={paragraph.slice(0, 24)}>{paragraph}</p>
+          ))}
+        </div>
+      </HomeSection>
 
-      <Experiences />
-      <SectionSeparator />
+      <HomeSection id="connect" title="Connect">
+        <ConnectGrid />
+      </HomeSection>
 
-      <Projects />
-      <SectionSeparator />
+      <HomeSection id="experience" title="Experience">
+        <Experiences />
+      </HomeSection>
 
-      <TechStack />
-      <SectionSeparator />
+      <HomeSection id="projects" title="Projects">
+        <ProjectGrid projects={PROJECTS} />
+      </HomeSection>
 
-      <GitHubContributions />
-      <SectionSeparator />
+      <HomeSection id="stack" title="Stack">
+        <TechStack />
+      </HomeSection>
 
+      <HomeSection id="github" title="GitHub Activity">
+        <GitHubContributions />
+      </HomeSection>
+
+      <HomeSection id="contact" title="Contact">
+        <ContactSection />
+      </HomeSection>
     </>
   )
 }
