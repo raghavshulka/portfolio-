@@ -1,8 +1,8 @@
 import { USER } from "@/features/portfolio/data/user"
 import type { NavItem } from "@/types/nav"
 
-// No public domain yet; set APP_URL when the site is deployed.
-const DEFAULT_SITE_URL = "http://localhost:3000"
+// Production domain; APP_URL overrides it (e.g. for local dev).
+const DEFAULT_SITE_URL = "https://himanshushukla.vercel.app"
 
 function normalizeSiteUrl(value?: string) {
   if (!value) return DEFAULT_SITE_URL
